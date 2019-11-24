@@ -14,10 +14,10 @@ var options = {
     password: mqttPass
 };
 
-const mqtt = Mqtt.connect(config.url, options);
+const mqtt = Mqtt.connect(config.mqttUrl, options);
 
 mqtt.on('connect', () => {
-    log.info('mqtt connected to', config.url);
+    log.info('mqtt connected to', config.mqttUrl);
 });
 
 mqtt.on('close', () => {
