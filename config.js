@@ -2,6 +2,8 @@ module.exports = require('yargs')
     .env('APCUPSD2MQTT')
     .usage('Usage: $0 [options]')
     .describe('mqtt-url', 'mqtt broker url.')
+    .describe('mqtt-user', 'mqtt broker username')
+    .describe('mqtt-pass', 'mqtt broker password')
     .describe('name', 'topic prefix')
     .describe('ups-name', 'UPS Name. Is overwritten if apcupsd supplies a name')
     .describe('interval', 'Interval in seconds to poll apcaccess')
@@ -12,6 +14,8 @@ module.exports = require('yargs')
         h: 'help',
         i: 'interval',
         m: 'mqtt-url',
+        s: 'mqtt-user',
+        p: 'mqtt-pass',
         n: 'name',
         u: 'ups-name',
         v: 'verbosity'
