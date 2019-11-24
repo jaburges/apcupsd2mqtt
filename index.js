@@ -10,8 +10,8 @@ log.setLevel(config.verbosity);
 log.info(pkg.name + ' version ' + pkg.version + ' starting');
 
 var options = {
-    username: mqttUser,
-    password: mqttPass
+    username: config.mqttUser,
+    password: config.mqttPass
 };
 
 const mqtt = Mqtt.connect(config.mqttUrl, options);
