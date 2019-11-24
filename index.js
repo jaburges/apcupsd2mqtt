@@ -9,7 +9,12 @@ const config = require('./config.js');
 log.setLevel(config.verbosity);
 log.info(pkg.name + ' version ' + pkg.version + ' starting');
 
-const mqtt = Mqtt.connect(config.url);
+var options = {
+    username: mqttUser,
+    password: mqttPass
+};
+
+const mqtt = Mqtt.connect(config.url, options);
 
 mqtt.on('connect', () => {
     log.info('mqtt connected to', config.url);
